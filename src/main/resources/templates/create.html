@@ -1,0 +1,40 @@
+<div class="container">
+        	<h2>新規学生登録</h2>
+        	<form th:action="@{/student/}" th:object="${data}" method="post" class="form-group">
+		        <div>
+		            <label for="ENT_YEAR">入学年度</label>
+		            <select id="ENT_YEAR" name="ENT_YEAR" th:field="*{ENT_YEAR}" th:classappend="${#fields.hasErrors('ENT_YEAR')} ? 'is-invalid' : 'is-valid'" />
+		                <option value="" disabled selected>入学年度を選択してください</option>
+		                <option value="2020">2020年</option>
+		                <option value="2021">2021年</option>
+		                <option value="2022">2022年</option>
+		                <option value="2023">2023年</option>
+		            </select>
+		        </div>
+		        <div>
+		            <label for="NO">学生番号</label>
+		            <input type="text" id="NO" name="NO" th:field="*{NO}" th:classappend="${#fields.hasErrors('NO')} ? 'is-invalid' : 'is-valid'"  placeholder="学生番号を入力してください" required />
+		        </div>
+		        <div>
+		            <label for="NAME">学生氏名</label>
+		            <input type="text" id="NAME" name="NAME" th:field="*{NAME}" th:classappend="${#fields.hasErrors('NAME')} ? 'is-invalid' : 'is-valid'" placeholder="氏名を入力してください" required /> 
+		        </div>
+		        <div>
+		            <label for="CLASS_NUM">クラス</label>
+		            <select id="CLASS_NUM" name="CLASS_NUM" th:field="*{CLASS_NUM}" th:classappend="${#fields.hasErrors('CLASS_NUM')} ? 'is-invalid' : 'is-valid'" />
+		                <option value="" disabled selected>クラスを選択してください</option>
+		                <option value="101">101</option>
+		                <option value="102">102</option>
+		                <option value="103">103</option>
+		                <option value="201">201</option>
+		                <option value="202">202</option>
+		                <option value="203">203</option>
+		                <option value="301">301</option>
+		                <option value="302">302</option>
+		                <option value="303">303</option>
+		            </select>
+		        </div>
+		        <br>
+		        <button type="submit" class="btn btn-outline-primary" value="Create">登録</button>
+    		</form>
+    	</div>
